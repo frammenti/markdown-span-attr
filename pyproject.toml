@@ -1,0 +1,24 @@
+[project]
+name = "markdown-span-attr"
+version = "0.1.0"
+description = "A Python-Markdown extension to add spans with attribute lists"
+authors = [{name = "Francesca Massarenti", email = "fra.mmenti@inventati.org"}]
+license = "MIT"
+readme = "README.md"
+packages = [{ include = "markdown_span_attr" }]
+keywords = ["markdown", "extension", "span", "attributes", "mkdocs"]
+requires-python = "^3.8"
+
+[tool.poetry.dependencies]
+markdown = "^3.3"
+
+[tool.poetry.group.test.dependencies]
+pytest = "^8.0"
+
+[tool.pytest.ini_options]
+log_format = "%(levelname)-8s %(message)s"
+log_date_format = "%H:%M:%S"
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
