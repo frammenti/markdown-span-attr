@@ -1,19 +1,20 @@
-"""
+'''
 Span Attribute Extension for Python-Markdown
+============================================
 
 Wraps inline content in <span> elements using attribute list syntax:
 
-    [content]{: #id .class key="value" }
+    [content]{#id .class key='value'}
 
 GitHub: https://github.com/frammenti/markdown-span-attr
 PyPI: https://pypi.org/project/markdown-span-attr/
 
-Copyright 2025 Francesca Massarenti
+Copyright 2025 Francesca Massarenti <fra.mmenti@inventati.org>
 License: MIT
-"""
+'''
 
 from markdown.test_tools import TestCase
-from markdown_span_attr import makeExtension
+from span_attr import makeExtension
 import logging
 
 def setup_module(module):
@@ -208,6 +209,12 @@ class TestSpans(TestCase):
             '<a class="less" href="#" title="Not">Maybe <span class="hope">it <span class="great">works</span></span></a>'
         )
 
+    def test_nested_all(self):
+        self.assertMarkdownRendersInline(
+            '[horace]: viaf.org/viaf/100227522 "Quintus Horatius Flaccus"\n\n[In saying that [Horace][horace]{.p} is [«[verbis [felicissime]{.emph} audax](#quint1){.cit}»]{.q} [daring in his choice of [[words]]{#w1}]]{ana="#s26"}',
+            '<span ana="#s26">In saying that <a class="p" href="viaf.org/viaf/100227522" title="Quintus Horatius Flaccus">Horace</a> is <span class="q">«<a class="cit" href="#quint1">verbis <span class="emph">felicissime</span> audax</a>»</span> [daring in his choice of <a class="wikilink" href="/words/" id="w1">words</a>]</span>'
+        )
+
     def test_html_tags(self):
         self.assertMarkdownRendersInline(
             '[*transilire lineas impune*]{: .q title="Varro, <em>De Lingua Latina</em> IX 5" }',
@@ -235,3 +242,4 @@ class TestSpans(TestCase):
             '[long\n\nbreak]{.ohno}',
             '<p>[long</p>\n<p>break]{.ohno}</p>'
         )
+
