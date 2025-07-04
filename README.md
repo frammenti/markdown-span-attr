@@ -138,7 +138,7 @@ This placement ensures the extension is compatible with link handling and HTML e
 | 120      | `autolink`         | Automatic links                             |
 | 110      | `automail`         | Automatic email links                       |
 | 100      | `linebreak`        | Hard line breaks                            |
-|  91      | `html`             | Inline HTML                                 |
+|  90      | `html`             | Inline HTML                                 |
 |  80      | `entity`           | HTML entities                               |
 |  75      | `wikilinks`*       | Wiki-style links                            |
 |  72      | `span_attr`*       | _(this extension)_                          |
