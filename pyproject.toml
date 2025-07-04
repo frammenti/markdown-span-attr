@@ -4,7 +4,7 @@ build-backend = 'setuptools.build_meta'
 
 [project]
 name = 'markdown-span-attr'
-version = '0.1.0'
+version = '0.2.0'
 description = 'Span attribute extension for Python-Markdown'
 readme = 'README.md'
 requires-python = '>= 3.9'
@@ -34,9 +34,6 @@ span_attr = 'span_attr.extension:SpanExtension'
 [project.urls]
 Repository = 'https://github.com/frammenti/markdown-span-attr'
 Issues = 'https://github.com/frammenti/markdown-span-attr/issues'
-
-[tool.setuptools.packages.find]
-where = ['span_attr']
 
 [tool.poetry]
 packages = [{ include = 'span_attr' }]
