@@ -156,8 +156,8 @@ This placement ensures the extension is compatible with link handling and HTML e
 [mitlicense-button]: https://img.shields.io/badge/License-MIT-blue.svg
 [mitlicense]: https://opensource.org/license/mit/
 [pyversion-button]: https://img.shields.io/pypi/pyversions/markdown-span-attr.svg
-[build-button]: https://github.com/frammenti/markdown-span-attr/actions/workflows/ci.yml/badge.svg
-[build]: https://github.com/frammenti/markdown-span-attr/actions/workflows/ci.yml
+[build-button]: https://github.com/frammenti/markdown-span-attr/actions/workflows/build.yml/badge.svg
+[build]: https://github.com/frammenti/markdown-span-attr/actions/workflows/build.yml
 
 <!-- Links -->
 [Python-Markdown]: https://python-markdown.github.io/
