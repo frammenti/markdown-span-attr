@@ -4,7 +4,7 @@ markdown-`span`-attr
 > *Sometimes you really need a span*
 
 [![PyPI Version][version-button]][pypi]
-[![MIT License][mitlicense-button]][mitlicense]
+[![GitHub License][license-button]][license]
 [![Python Versions][pyversion-button]][pypi]
 [![Build Status][build-button]][build]
 
@@ -153,8 +153,8 @@ This placement ensures the extension is compatible with link handling and HTML e
 <!-- Badges -->
 [version-button]: https://img.shields.io/pypi/v/markdown-span-attr.svg
 [pypi]: https://pypi.org/project/markdown-span-attr/
-[mitlicense-button]: https://img.shields.io/badge/License-MIT-blue.svg
-[mitlicense]: https://opensource.org/license/mit/
+[license-button]: https://img.shields.io/github/license/frammenti/markdown-span-attr
+[license]: https://opensource.org/license/mit/
 [pyversion-button]: https://img.shields.io/pypi/pyversions/markdown-span-attr.svg
 [build-button]: https://github.com/frammenti/markdown-span-attr/actions/workflows/build.yml/badge.svg
 [build]: https://github.com/frammenti/markdown-span-attr/actions/workflows/build.yml
