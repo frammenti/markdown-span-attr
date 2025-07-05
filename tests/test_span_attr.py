@@ -156,6 +156,16 @@ class TestSpans(TestCase):
             '[crooked]: # "Not ok"\n\n[[I am][crooked]{#outer}',
             '[<a href="#" id="outer" title="Not ok">I am</a>'
         )
+        self.assertMarkdownRendersInline(
+            '[i am short]: # "Auto"\n\nIt is not a problem if [I am short]{.it .is .not}!',
+            'It is not a problem if <a class="it is not" href="#" title="Auto">I am short</a>!'
+        )
+        ''' Nested short reference links are not supported
+        self.assertMarkdownRendersInline(
+            '[i am short]: # "Auto"\n\n[It is not a problem if [I am short]{.it .is .not}]{#outer}',
+            '<span id="outer">It is not a problem if <a class="it is not" href="#" title="Auto">I am short</a></span>'
+        )
+        '''
 
     def test_nested_wikilink(self):
         self.assertMarkdownRendersInline(
@@ -207,6 +217,24 @@ class TestSpans(TestCase):
         self.assertMarkdownRendersInline(
             '[maybe]: # "Not"\n\n[Maybe [it [works]{.great}]{.hope}][maybe]{.less}',
             '<a class="less" href="#" title="Not">Maybe <span class="hope">it <span class="great">works</span></span></a>'
+        )
+
+    def test_spans_nested_in_links(self):
+        self.assertMarkdownRendersInline(
+            '[[level [1]{#1}]{#2} [3]{#3}](#ref){.levels}',
+            '<a class="levels" href="#ref"><span id="2">level <span id="1">1</span></span> <span id="3">3</span></a>'
+        )
+        self.assertMarkdownRendersInline(
+            '[innocent](#ref "A [strange]{.strange} title"){.strange}',
+            '<a class="strange" href="#ref" title="A [strange]{.strange} title">innocent</a>'
+        )
+        self.assertMarkdownRendersInline(
+            '[level]: #ref\n\n[[[1]{#1}]{#2}[3]{#3}][level]{.levels}',
+            '<a class="levels" href="#ref"><span id="2"><span id="1">1</span></span><span id="3">3</span></a>'
+        )
+        self.assertMarkdownRendersInline(
+            '[[an [odd]{.odd} wiki]]{.levels}',
+            '<span class="levels">[an <span class="odd">odd</span> wiki]</span>'
         )
 
     def test_nested_all(self):
