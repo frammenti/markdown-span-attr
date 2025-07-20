@@ -7,6 +7,7 @@ markdown-`span`-attr
 [![GitHub License][license-button]][license]
 [![Python Versions][pyversion-button]][pypi]
 [![Build Status][build-button]][build]
+[![Downloads][downloads-button]][pypi-stats]
 
 A [Python-Markdown] extension that enables inline `<span>` elements with attribute lists:
 
@@ -158,6 +159,8 @@ This placement ensures the extension is compatible with link handling and HTML e
 [pyversion-button]: https://img.shields.io/pypi/pyversions/markdown-span-attr.svg
 [build-button]: https://github.com/frammenti/markdown-span-attr/actions/workflows/build.yml/badge.svg
 [build]: https://github.com/frammenti/markdown-span-attr/actions/workflows/build.yml
+[downloads-button]: https://img.shields.io/pypi/dm/markdown-span-attr.svg
+[pypi-stats]: https://pypistats.org/packages/markdown-span-attr
 
 <!-- Links -->
 [Python-Markdown]: https://python-markdown.github.io/
